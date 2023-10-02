@@ -50,9 +50,9 @@ Speaking of TinyMCE, the second "feature" of tiptap is that it is based on the
 Prosemirror editor. Unlike TinyMCE, which allows basically for almost any kind
 of HTML structure in the content Prosemirror is very strict. You have to define
 the schema and only what the schema permits will be allowed in the resulting
-HTML output. A <img> tag specified as a child of a <figure> tag but not as
-child of a <div>? It would be stripped out. An attribute other than `href` and
-`title` on a link tag? The attribute would be removed. A <iframe> pointing to a
+HTML output. A `<img>` tag specified as a child of a `<figure>` tag but not as
+child of a `<div>`? It would be stripped out. An attribute other than `href` and
+`title` on a link tag? The attribute would be removed. A `<iframe>` pointing to a
 resource other than Vimeo or YouTube? It would not be included. An empty
 paragraph? If it is not explicitly allowed, it will be removed.
 
