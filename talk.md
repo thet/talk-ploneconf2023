@@ -273,19 +273,48 @@
 - Need real world testing 🤷
 
 
-
-
-<!-- .slide: data-background="Blue" -->
-### Open questions
-
-
-<!-- .slide: data-background="Blue" -->
-- Bundling questions
-  (mixing non-module app with module imports in a module-type node app)
-
-
 <!-- .slide: data-background="Blue" -->
 - Plone as storage backend? 🤷
+
+
+<!-- .slide: data-background="Blue" -->
+- BBQ
+  <br>Boring bundling questions
+  <br>Mixing non-module app (pat-tiptap) module-type node app, both using ES6 module imports.
+
+
+
+
+<!-- .slide: data-background="Blue" -->
+### Outlook
+
+
+<!-- .slide: data-background="Blue" -->
+Make this available in standard Quaive.
+
+
+<!-- .slide: data-background="Blue" -->
+Multi-channel editing
+<br>
+<br>Edit title, description, date, text, list of participants, subject, ... collaboratively in real time!
+
+
+<!-- .slide: data-background="Blue" -->
+Collaborative whiteboard
+
+
+<!-- .slide: data-background="Blue" -->
+Collaborative cardboard notes
+
+
+<!-- .slide: data-background="Blue" -->
+Real-time chat!
+
+
+<!-- .slide: data-background="Blue" -->
+Collaborative anything!
+<br>
+<br>CRDT is used by soundcloud, online games, chat systems, etc
 
 
 
