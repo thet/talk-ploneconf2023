@@ -7,15 +7,21 @@
     <meta name="description" content="Collaboration revolutions in Quaive.">
     <meta name="author" content="Johannes Raggam, Syslab">
 
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!--link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/simple.min.css"-->
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/monokai.min.css">
+    <!--link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/monokai.min.css"-->
+
+    <link href="./reveal/font-ubuntu.css" rel="stylesheet">
+    <link href="./reveal/reset.css" rel="stylesheet">
+    <link href="./reveal/reveal.min.css" rel="stylesheet">
+    <link href="./reveal/simple.css" rel="stylesheet">
+    <link href="./reveal/monokai.css" rel="stylesheet">
 
     <link href="./resources/custom.css" rel="stylesheet">
   </head>
@@ -42,10 +48,12 @@
       </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script-->
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.min.js"></script-->
+    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script-->
+
+    <script src="./reveal/reveal.js"></script>
 
     <script>
       // More info about config & dependencies:
@@ -68,16 +76,24 @@
           sanitize: false,
         },
 
-        plugins: [
-          //RevealHighlight,
-          RevealMarkdown,
-          RevealNotes,
-        ],
+				dependencies: [
+		      { src: './reveal/externalcode.js', condition: function() { return !!document.querySelector( '[data-code]' ); } },
+					{ src: './reveal/marked.js' },
+					{ src: './reveal/markdown.js' },
+					{ src: './reveal/notes.js', async: true },
+					{ src: './reveal/highlight.js', async: true }
+				]
 
-        dependencies: [
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.js' },
-        /// src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js" }
-        ]
+        //plugins: [
+        //  //RevealHighlight,
+        //  RevealMarkdown,
+        //  RevealNotes,
+        //],
+
+        //dependencies: [
+        //  { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.js' },
+        ///// src: "https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.min.js" }
+        //]
 
       });
     </script>
