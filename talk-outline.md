@@ -23,6 +23,17 @@ Collaboration revolutions in Quaive.
 
 ## Use cases
 
+The weekly meeting
+
+8 People do a meeting. One person is doing the minutes. 3 days later, the minutes are compiled and sent around for approval. 2 days later, everybody said ok - the dutch say "pee'd on it" - and one day later the final minutes are sent around. One day before the next meeting.
+
+Wouldn't it be nice if we all would write the minutes during the meeting, or at least in the 10 mins afterwards. Immediate compilation and approval? And then everybody knew which tasks have to be done until next weeks meeting?
+
+Ok, let's do it that way. What tool can do that? Google docs - but everybody needs a google account. Microsoft teams? Same story. Onlyoffice or Collabora? A third system needed again. And why would we write A4, we want to be online only! Confluence has a collaborative web editor… But its atlassian and behaves interestingly. And is expensive. And a third system. We are plone users! And we use plone as an intranet. Can't we have it there?
+
+Apropos intranet: Many content types in an intranet could be accessed in parallel, because content in an intranet is often used in meetings. Collaboratively. And each time a lock is forgotten, a doc can't get edited anymore. Annoying. When we do a meeting, we open the event type to check the agenda. Everybody with write access could write, if we had collaborative editing. Even the minutes could live in the event. Attendees could get added while others have the event open.
+
+But also tasks on a board could be worked on in parallel.
 
 
 ## Collabora integration
@@ -57,7 +68,7 @@ resource other than Vimeo or YouTube? It would not be included. An empty
 paragraph? If it is not explicitly allowed, it will be removed.
 
 These are only examples. But the strictness of tiptap resp. Prosemirror is a
-good thing. No more ugly HTML produces by copy/pasting from Word. The HTML is
+good thing. No more ugly HTML produced by copy/pasting from Word. The HTML is
 always as clean as you have defined it.
 
 We have created the `pat-tiptap` Patternslib addon which has a lot of

@@ -1,7 +1,8 @@
-# Module Federation in Plone
+# Collaboration revolutions in Quaive
 
-How Plone uses module federation to solve problem of adding JavaScript in addons.
+About upcoming tool integrations for collaborative work in Quaive and how that relates to Plone.
 
-Johannes Raggam @ Plone Conference 2022
+Johannes Raggam @ Plone Conference 2023
 
-Slides online at: https://thet.github.io/talk-ploneconf2022
+Slides online at: https://thet.github.io/talk-ploneconf2023
+Repository at:    https://github.com/thet/talk-ploneconf2023
