@@ -5,9 +5,13 @@
 <!-- .slide: data-background="lime" -->
 - quaive.app.onlyoffice
 
+
+<!-- .slide: data-background="lime" -->
 - quaive.app.libreoffice (collabora)
 
-- pat-tiptap / hocuspocus / yjs
+
+<!-- .slide: data-background="lime" -->
+- pat-tiptap / Hocuspocus / Yjs
 
 
 
@@ -19,16 +23,24 @@
 <!-- .slide: data-background="lime" -->
 - "The weekly meeting"
 
+
+<!-- .slide: data-background="lime" -->
 - Replaces need to send documents.
 
+
+<!-- .slide: data-background="lime" -->
 - Enables faster delivery when memory is still fresh.
 
 
 <!-- .slide: data-background="lime" -->
 - Working together on the same document.
 
+
+<!-- .slide: data-background="lime" -->
 - Pair programming.
 
+
+<!-- .slide: data-background="lime" -->
 - Collaborative whiteboard.
 
 
@@ -37,69 +49,95 @@
 <!-- .slide: data-background="Yellow" -->
 ## About pat-tiptap
 
-- Patternslib integration of tiptap
 
-- headless / designless editor
+<!-- .slide: data-background="Yellow" -->
+- Patternslib integration of Tiptap
 
-- Uses and integrates Patternslib patterns (pat-tooltip, pat-autosubmit, etc)
+
+<!-- .slide: data-background="Yellow" -->
+- Headless / designless editor
+  <br>Use your own design!
+
+
+<!-- .slide: data-background="Yellow" -->
+- Uses Patternslib patterns
+  <br>(pat-tooltip, pat-autosubmit, etc)
 
 
 <!-- .slide: data-background="Yellow" -->
 - Based on ProseMirror
 
+
+<!-- .slide: data-background="Yellow" -->
 - Strict schema
 
+
+<!-- .slide: data-background="Yellow" -->
 - Potentially nice HTML
 
 
 <!-- .slide: data-background="Yellow" -->
-- opinionated but well-reasoned
+- Opinionated but well-reasoned
 
 
 
 
 <!-- .slide: data-background="Blue" -->
-## tiptap as collaborative editor
+## Tiptap as collaborative editor
 
 
 <!-- .slide: data-background="Blue" -->
-- tiptap
+- Tiptap
 
-- yjs
+- Yjs
 
-- hocuspocus
-
-
-<!-- .slide: data-background="Blue" -->
-### yjs?
+- Hocuspocus
 
 
 <!-- .slide: data-background="Blue" -->
-- Conflict-free replicated data types (CRDT) framework
-
-- A bit like conflict resolution in ZODB (ale)
+### Yjs?
 
 
 <!-- .slide: data-background="Blue" -->
-- automatic syncing
-
-- offline support
-
-- history support
-
-- high performance
+- Conflict-free replicated data types (CRDT)
 
 
 <!-- .slide: data-background="Blue" -->
-## hocuspocus
+- A bit like conflict resolution in ZODB (🥂 ale)
 
 
 <!-- .slide: data-background="Blue" -->
-- tiptap's own collaboration backend
+- Automatic syncing
 
-- websocket server
 
-- support for databases, redis, etc
+<!-- .slide: data-background="Blue" -->
+- Offline support
+
+
+<!-- .slide: data-background="Blue" -->
+- History support
+
+
+<!-- .slide: data-background="Blue" -->
+- High performance
+
+
+<!-- .slide: data-background="Blue" -->
+## Hocuspocus
+
+
+<!-- .slide: data-background="Blue" -->
+- Tiptap's own collaboration backend
+
+
+<!-- .slide: data-background="Blue" -->
+- Websocket server
+
+
+<!-- .slide: data-background="Blue" -->
+- Support for databases, redis, etc 
+
+
 
 
 <!-- .slide: data-background="Blue" -->
@@ -110,80 +148,111 @@
 ## DEMO
 
 
+
+
 <!-- .slide: data-background="Blue" -->
 ## First Prototype
 
 
 <!-- .slide: data-background="Blue" -->
-- Shared-secret token with encoded data.
-  <br>(document id, username, color).
+- Shared-secret token with encoded data:
+  <br>
+  <br>Document UUID,
+  <br>User name,
+  <br>User color,
 
-- Content from textarea.
 
+<!-- .slide: data-background="Blue" -->
 - Hocuspocus decodes token.
 
+
+<!-- .slide: data-background="Blue" -->
+- Content from textarea.
+
+
+<!-- .slide: data-background="Blue" -->
 - Saves via client.
 
 
 <!-- .slide: data-background="Blue" -->
-### Problems
+## Problems? 🤷
 
 
 <!-- .slide: data-background="Blue" -->
 - No collaboration history.
 
+
+<!-- .slide: data-background="Blue" -->
 - Only initiating user can save.
-  (unless custom deferring view)
+  <br>(unless custom deferring view)
 
+
+<!-- .slide: data-background="Blue" -->
 - Permissions check only client side.
-  (might be sufficient)
+  <br>(might be sufficient)
+
+
 
 
 <!-- .slide: data-background="Blue" -->
-### Second prototype
+## Second prototype
 
 
 <!-- .slide: data-background="Blue" -->
-- Token plus Plone JWT authorization token and base URL of the document.
+- Shared-secret token with encoded data:
+  <br>
+  <br>Document UUID,
+  <br>User name,
+  <br>User color,
+  <br>Plone JWT authorization token,
+  <br>API endpoint URL for the document.
 
-- Hocuspocus loads content (plone.restapi).
 
+<!-- .slide: data-background="Blue" -->
+- Hocuspocus loads content
+  <br>
+  <br>plone.restapi ♥️
+
+
+<!-- .slide: data-background="Blue" -->
 - Hocuspocus checks permissions.
 
+
+<!-- .slide: data-background="Blue" -->
 - Hocuspocus saves deferred.
 
 
 <!-- .slide: data-background="Blue" -->
-### Problems
+## Problems? 🤷
 
 
 <!-- .slide: data-background="Blue" -->
 - Still no history support.
 
-- Hocuspocus needs tiptap's document schema for transformation.
+
+<!-- .slide: data-background="Blue" -->
+- Hocuspocus needs document schema.
+
+
 
 
 <!-- .slide: data-background="Blue" -->
-### Third prototype
+## Third prototype
 
 
 <!-- .slide: data-background="Blue" -->
 - Saves the Yjs document.
 
-- Uses plone.app.textfield `raw` (Yjs) and `output` (transformed).
 
+<!-- .slide: data-background="Blue" -->
+- Uses plone.app.textfield
+  <br>
+  <br>Yjs document in `raw` field.
+  <br>transformed HTML in `output` field.
+
+
+<!-- .slide: data-background="Blue" -->
 - Document transformer could be implemented Plone-side.
-
-
-<!-- .slide: data-background="Blue" -->
-### Open questions
-
-
-<!-- .slide: data-background="Blue" -->
-- Bundling questions
-  (mixing non-module app with module imports in a module-type node app)
-
-- Plone as storage backend?
 
 
 
@@ -195,9 +264,28 @@
 <!-- .slide: data-background="Cyan" -->
 - Working prototype 1 + 2 (partly).
 
+
+<!-- .slide: data-background="Cyan" -->
 - Expect this to be ready soon(ish).
 
-- Need real world testing.
+
+<!-- .slide: data-background="Cyan" -->
+- Need real world testing 🤷
+
+
+
+
+<!-- .slide: data-background="Blue" -->
+### Open questions
+
+
+<!-- .slide: data-background="Blue" -->
+- Bundling questions
+  (mixing non-module app with module imports in a module-type node app)
+
+
+<!-- .slide: data-background="Blue" -->
+- Plone as storage backend? 🤷
 
 
 
