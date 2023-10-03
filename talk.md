@@ -10,6 +10,8 @@
 - pat-tiptap / hocuspocus / yjs
 
 
+
+
 <!-- .slide: data-background="lime" -->
 ## Collaboration stories
 
@@ -28,6 +30,7 @@
 - Pair programming.
 
 - Collaborative whiteboard.
+
 
 
 
@@ -50,7 +53,9 @@
 
 
 <!-- .slide: data-background="Yellow" -->
-- pat-tiptap is an opinionated but well-reasoned editor
+- opinionated but well-reasoned
+
+
 
 
 <!-- .slide: data-background="Blue" -->
@@ -110,13 +115,14 @@
 
 
 <!-- .slide: data-background="Blue" -->
-- shared-secret token with encoded data (document id, username, color)
+- Shared-secret token with encoded data.
+  <br>(document id, username, color).
 
-- pat-tiptap init with content from textarea
+- Content from textarea.
 
-- hocuspocus decodes token
+- Hocuspocus decodes token.
 
-- changes are saved back to Plone from the client.
+- Saves via client.
 
 
 <!-- .slide: data-background="Blue" -->
@@ -124,13 +130,13 @@
 
 
 <!-- .slide: data-background="Blue" -->
-- no collaboration history.
+- No collaboration history.
 
-- only initiating user can save
-  (unless custom view queuing/deferring all requests)
+- Only initiating user can save.
+  (unless custom deferring view)
 
-- Permissions never checked server side
-  (but for hijacking you'd need shared secret)
+- Permissions check only client side.
+  (might be sufficient)
 
 
 <!-- .slide: data-background="Blue" -->
@@ -138,15 +144,23 @@
 
 
 <!-- .slide: data-background="Blue" -->
-- token plus Plone JWT authorization token and base URL of the document.
+- Token plus Plone JWT authorization token and base URL of the document.
 
-- get the document via plone.restapi.
+- Hocuspocus loads content (plone.restapi).
 
-- check document permissions.
+- Hocuspocus checks permissions.
 
-- saves are deferred.
+- Hocuspocus saves deferred.
 
-- document schema must be available on the server.
+
+<!-- .slide: data-background="Blue" -->
+### Problems
+
+
+<!-- .slide: data-background="Blue" -->
+- Still no history support.
+
+- Hocuspocus needs tiptap's document schema for transformation.
 
 
 <!-- .slide: data-background="Blue" -->
@@ -154,7 +168,7 @@
 
 
 <!-- .slide: data-background="Blue" -->
-- Saves the Yjs document
+- Saves the Yjs document.
 
 - Uses plone.app.textfield `raw` (Yjs) and `output` (transformed).
 
@@ -172,6 +186,8 @@
 - Plone as storage backend?
 
 
+
+
 <!-- .slide: data-background="Cyan" -->
 ## Status
 
@@ -184,7 +200,11 @@
 - Need real world testing.
 
 
+
+
 <!-- .slide: data-background="Purple" data-background-image="./resources/imgs/thats_all_folks.svg" -->
+
+
 
 
 <!-- .slide: data-background="DarkViolet" -->
