@@ -88,43 +88,57 @@ https://github.com/Patternslib/pat-tiptap/pull/6
 
 ## our implementation
 
-- pat-tiptap 
+- pat-tiptap
 
 
-- tiptap-collaboration-server
+- tiptap-collaboration-server (hocuspocus)
 
 
 ### First Prototype
 
-- tiptap retrieves the content from the textarea in the client
-- tiptap saves back the content with pat-autosubmit
+- DEMO
+
+- Quaive generates a token with a shared secret, encoding some data to be used on the collaboration server.
+
+- pat-tiptap initialized with content from textarea, connects to hocuspocus using the token from Quaive
+
+- hocuspocus tries to decode the token with the shared secret. If it works, the user is successfully authenticated.
+
+- pat-tiptap uses pat-autosubmit to save back the changed content to the Plone instanc.
+
+
+#### Problems
+
+- Storing as plain HTML withdraws the collaboration history. This drawback is acceptable, when we only want to enable collaboration but don't need to provide a thorough history. For every new collaboration session the tiptap/yjs representation of the document would be generated from the HTML.
+
+- If the storage is initiated client-side we need to keep track of the initiating user and only that should store back the changes to Plone. Otherwise there would be a lot of concurrent requests from different clients trying to save the same state.
+
+- Document access permissions are never checked on the server side.
+
 
 ### Second prototype
 
-- A shared secret is used to encrypt data in Plone and send it via pat-tiptap
-  over to the hocuspocus server.
+- A shared secret is used to encrypt data in Plone and send it via pat-tiptap over to the hocuspocus server.
 
-- The data includes the Plone JWT authorization token, the document UID and the
-  base URL of the document.
+- The data includes the Plone JWT authorization token, the document UID and the base URL of the document.
 
-- The hocuspocus server communicates with plone.restapi to retrieve the
-  document. If the connected user would not have the rights to view it, he
-  would not be able to connect. If the user does not have the rights to edit
-  the document, it would be opened read-only.
+- The hocuspocus server communicates with plone.restapi to retrieve the document. If the connected user would not have the rights to view it, he would not be able to connect. If the user does not have the rights to edit the document, it would be opened read-only.
 
-- Changes are debounced and only commited back to the Plone server vie
-  plone.restapi calls after a specific time intervar.
+- Changes are debounced and only commited back to the Plone server via plone.restapi calls after a specific time interval.
 
-- We use plone.app.textfied to store the JSON structure in the `raw` field and
-  a transformed document in the `output` field.
+- The transformation chain on the hocuspocus server has to replicate the same extensions as used for the original document. The extensions define the allowed structure of the resulting HTML. Basically it has to use the same extensions as pat-tiptap on the client.
 
-- The transformation chain on the hocuspocus server has to replicate the same
-  extensions as used for the original document. Basically it has to use the
-  same extensions as pat-tiptap.
+
+### Third prototype
+
+- Same as second, but:
+
+- We use plone.app.textfied to store the history aware yjs data structure. The yjs document is stored in plone.app.textfield's `raw` field and the transformed representation in the `output` field. This way we preserve the history and are able to restore it on a completly new collaboration session.
 
 
 
 ### Open questions
+
 
 - How can we use pat-tiptap in the hocuspocus node application? Currently,
   without any bundler, we have to define the hocuspocus backend as
@@ -132,8 +146,8 @@ https://github.com/Patternslib/pat-tiptap/pull/6
   define it as `type=module` and thus we cannot directly import files in
   hocuspocus...
 
-- Is Plone ready to serve as backend for a collaboration editor?
+- Is Plone ready to serve as backend for a collaboration editor? Or would be a high-performance store like redis better suited?
 
-- 
+
 
 
