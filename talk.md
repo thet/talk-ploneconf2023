@@ -266,7 +266,7 @@
 
 
 <!-- .slide: data-background="Cyan" -->
-- Expect this to be ready soon(ish).
+- Will push, once it works. Interested in feedback.
 
 
 <!-- .slide: data-background="Cyan" -->
