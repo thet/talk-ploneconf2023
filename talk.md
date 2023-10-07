@@ -294,6 +294,10 @@ Make this available in standard Quaive.
 
 
 <!-- .slide: data-background="Blue" -->
+Make this available in Plone.
+
+
+<!-- .slide: data-background="Blue" -->
 Multi-channel editing
 <br>
 <br>Edit title, description, date, text, list of participants, subject, ... collaboratively in real time!
